@@ -1,6 +1,6 @@
 {
   "name": "app-chat",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Lorem ipsum dolor sit amet",
   "main": "src/server.ts",
   "repository": "https://github.com/Kaishiro63/Node.js.git",
