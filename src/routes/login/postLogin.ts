@@ -1,6 +1,6 @@
 import { Application } from "express-ws";
 import bodyParser from "body-parser";
-import { findUserByEmail } from "../repositories/userRepository";
+import { findUserByEmail } from "../../repositories/userRepository";
 
 export function postLogin(app: Application) {
   app.post("/login", bodyParser.urlencoded(), async (req, res) => {
@@ -8,7 +8,7 @@ export function postLogin(app: Application) {
       const email = req.body.email;
       const user = await findUserByEmail(email);
       if (!user) {
-        res.status(401).send("Invalid email");
+        res.status(401).send("Incorrect email");
         return;
       }
       res.cookie("ssid", user.id, {
@@ -16,7 +16,7 @@ export function postLogin(app: Application) {
         httpOnly: true,
         sameSite: true,
       });
-      res.redirect("/");
+      res.redirect("/chat");
     } catch (e) {
       console.error(e);
       res.status(500).send("Internal Server Error");

@@ -5,23 +5,23 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/chat.css">
-  <title>Chat app</title>
+  <link rel="stylesheet" href="assets/home.css">
+  <title>Register</title>
 </head>
   <body>
-    <h1>My chat app</h1>
+    <h1>Latest posts</h1>
     <i id="chat-status"></i>
-    <div id="message-list"></div>
+    <div id="post-list"></div>
 
     <form>
-      <input type="text" id="chat-input"/>
+      <textarea name="" id="post-input"></textarea>
       <button type="submit">Send</button>
     </form>
 
     <form action="/profile">
-      <input type="submit" value="Check your profile"/>
+      <input type="submit" value="Go to Profile" />
     </form>
 
-    <script src="/client.js"></script>
+    <script src="post.js"></script>
   </body>
 </html>

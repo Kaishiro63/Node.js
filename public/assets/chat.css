@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#chat-status {
+  display: block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}

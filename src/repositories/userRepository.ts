@@ -12,6 +12,7 @@ export function findUserById(id: string) {
   if (!id) {
     return null;
   }
+
   return prisma.user.findUnique({
     where: {
       id,
@@ -19,7 +20,11 @@ export function findUserById(id: string) {
   });
 }
 
-export function createUser(email: string, name: string) {
+export async function createUser(email: string, name: string) {
+  const existingUser = await findUserByEmail(email);
+  if (existingUser) {
+    return null;
+  }
   return prisma.user.create({
     data: {
       email,

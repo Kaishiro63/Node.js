@@ -6,7 +6,7 @@ export function authenticationMiddleware(
   next: NextFunction
 ) {
   if (!req.signedCookies.ssid) {
-    res.redirect("/");
+    res.redirect("/login");
     return;
   }
   next();
